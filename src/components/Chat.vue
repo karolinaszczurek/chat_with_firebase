@@ -40,8 +40,6 @@
     },
     created() {
       let ref = db.collection('messages').orderBy('timestamp')
-      //orderBy - sortuje po czasie - przez co najnowsze wiadomosci
-      //beda na koncu listy!
 
       ref.onSnapshot(snapshot => {
         (snapshot.docChanges().forEach(change => {
@@ -58,10 +56,6 @@
           }
         }))
       })
-      //  metoda onSnapshot nasluchuje na jakiekolwiek zmiany
-      //  w kolekcji messages - jesli cos zostaje zmienione/usuniete
-      //  /dodane to firestore robi migawke tej bazy w tym czasie
-      //  i wysyla go do nas
     }
   }
 </script>
